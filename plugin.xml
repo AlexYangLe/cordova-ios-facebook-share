@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-fbshare" version="1.0.0"
+  xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>crabcrab-plugin-fbshare</name>
+  <js-module name="FBSharing" src="www/FBSharing.js">
+    <clobbers target="cordova.plugins.FBSharing" />
+  </js-module>
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="FBSharing">
+        <param name="ios-package" value="FBSharing" />
+      </feature>
+    </config-file>
+    <header-file src="src/ios/FBSharing.h" />
+    <source-file src="src/ios/FBSharing.m" />
+    <framework src="src/ios/Bolts.framework" custom="true"/>
+    <framework src="src/ios/FBSDKCoreKit.framework" custom="true"/>
+    <framework src="src/ios/FBSDKShareKit.framework" custom="true"/>
+  </platform>
+</plugin>
